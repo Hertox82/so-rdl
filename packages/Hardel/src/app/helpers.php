@@ -138,5 +138,14 @@ if(! function_exists('build_iteration_order_array')) {
     }
 }
 
+if(! function_exists('genericView')) {
+
+    function genericView($data){
+
+        // Restituzione
+        return view('hardel::error.generic-error',$data);
+    }
+}
+
 
 

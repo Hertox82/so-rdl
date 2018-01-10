@@ -194,7 +194,7 @@
                                 @endforeach
                                 <td style="text-align: center;">
                                     @include('hardel::list.include.action-v1',['listInfo' => $listInfo, 'row' => $row])
-                                    <a href="{{ route($routePrefix . '.edit', $row->id) }}" class="tooltips" data-original-title="Modifica"><i class="fa fa-edit"></i></a>
+                                    <a href="{{ route($routePrefix . '.edit', $row->id) }}" class="tooltips" data-original-title="Modifica"><i class="fa fa-edit fa-2x"></i></a>
                                 </td>
                             </tr>
                         @endforeach

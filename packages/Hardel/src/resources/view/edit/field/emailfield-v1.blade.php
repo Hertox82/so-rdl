@@ -12,5 +12,8 @@
                    name="{{ $Field->getProperty('id') }}"
                    value="{{ old($Field->getProperty('id'), $Field->getProperty('value')) }}" @if($Field->getProperty('disabled')) readonly @endif>
         </div>
+        @if($Field->getProperty('help'))
+            <span class="help-block">{{$Field->getProperty('help')}}</span>
+        @endif
     </div>
 </div>

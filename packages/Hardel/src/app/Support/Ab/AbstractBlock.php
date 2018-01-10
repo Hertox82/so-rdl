@@ -18,6 +18,7 @@ abstract class AbstractBlock
     protected $js = null;
     protected $Obj = null;
     protected $savedFunction = null;
+    protected $beforeSaveFunction = null;
 
     /*public static function init($args)
     {

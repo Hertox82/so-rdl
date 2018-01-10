@@ -78,7 +78,7 @@
         <div class="page-top">
             <!-- BEGIN HEADER SEARCH BOX -->
             <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-            <form class="search-form" action="page_general_search_2.html" method="GET">
+            <!--<form class="search-form" action="page_general_search_2.html" method="GET">
                 <div class="input-group">
                     <input type="text" class="form-control input-sm" placeholder="Search..." name="query">
                     <span class="input-group-btn">
@@ -87,7 +87,7 @@
                                     </a>
                                 </span>
                 </div>
-            </form>
+            </form> -->
             <!-- END HEADER SEARCH BOX -->
 
             <!-- BEGIN TOP NAVIGATION MENU -->
@@ -110,7 +110,9 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <span class="username username-hide-on-mobile">  {{ Auth::user()->name }} </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                            <img alt="" class="img-circle" src="{{ $Activeuser->gravatar }}" /> </a>
+                            @if($Activeuser->gravatar != 'none')
+                                <img alt="" class="img-circle" src="{{ $Activeuser->gravatar }}" /> </a>
+                            @endif
                         <ul class="dropdown-menu dropdown-menu-default">
                             <!--
                             <li class="divider"> </li> -->

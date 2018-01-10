@@ -48,17 +48,21 @@ class EditManager{
         $param = cleanParam($args, $default);
 
         // Salvataggio
-        $this->objName = $param['objName'];
+        /*$this->objName = $param['objName'];
         $this->objId = $param['objId'];
         $this->title = $param['title'];
         $this->subtitle = $param['subTitle'];
-        $this->input = $param['input'];
+        $this->input = $param['input'];*/
+        foreach ($param as $key => $value)
+        {
+            $this->$key = $value;
+        }
 
         $this->generalInfo['extends'] = $param['extends'];
         $this->generalInfo['title'] = $param['title'];
         $this->generalInfo['subTitle'] = $param['subTitle'];
         $this->generalInfo['view'] = $param['view'];
-        $this->routeAfterSave = $param['routeAfterSave'];
+        //$this->routeAfterSave = $param['routeAfterSave'];
 
         $this->routePrefix = $this->findRoute();
 
@@ -275,6 +279,7 @@ class EditManager{
         // Inizializza
         $funcList = [
             'saved' => [],
+            'beforeSave' => [],
         ];
 
         // Scansiona i blocchi pre-inserimento
@@ -282,6 +287,10 @@ class EditManager{
             foreach($label['blocks'] as $Block) {
                 if(strlen($Block->savedFunction) != 0) {
                     $funcList['saved'][] = $Block->savedFunction;
+                }
+
+                if(strlen($Block->beforeSaveFunction) != 0){
+                    $funcList['beforeSave'][] = $Block->beforeSaveFunction;
                 }
             }
         }

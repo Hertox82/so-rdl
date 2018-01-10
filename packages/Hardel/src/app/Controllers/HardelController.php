@@ -93,6 +93,10 @@ class HardelController extends BaseController
             $listOfFuncts = $editManager->getFunction();
             $listOfBlocks = $editManager->getBlocks();
 
+            foreach ($listOfFuncts['beforeSave'] as $name)
+            {
+                $this->$name($Obj,$request);
+            }
             // Imposta i valori nell'oggetto
             foreach($listOfFields as $key => $value) {
                 $Obj->$key = $value;
