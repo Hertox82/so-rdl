@@ -1,0 +1,5 @@
+.smo016_spinner { background: url(ajax-loader1.gif) center center; width: 32px; height: 32px; }
+.smo016_spinner.margined { margin: 20px 0; }
+.label-format2 { background-color:rgba(166, 242, 226, 0.34)}
+.label-format3 { background-color: rgba(122, 116, 212, 0.28)}
+.fontSize { font-size: 1.5em;}
