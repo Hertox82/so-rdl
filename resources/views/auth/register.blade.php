@@ -291,6 +291,15 @@
                                     <textarea id="note" type="text" class="form-control" name="note" value="{{ old('note') }}" style="height: 154px;"></textarea>
                                 </div>
                             </div>
+                            <div class="form-group {{ $errors->has('note') ? ' has-error' : '' }}">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-8">
+                                    <label class="mt-checkbox">
+                                        <input type="checkbox"> Ho letto l'Informativa sulla <a href="#">Privacy</a> e acconsento.
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-4">
