@@ -3,3 +3,17 @@
 .label-format2 { background-color:rgba(166, 242, 226, 0.34)}
 .label-format3 { background-color: rgba(122, 116, 212, 0.28)}
 .fontSize { font-size: 1.5em;}
+body { background-color: white;}
+
+
+.portlet.box.green > .portlet-title, .portlet.green, .portlet > .portlet-body.green {
+    background-color: #ffd600;
+}
+
+.portlet.box.green {
+    border: 1px solid #ffd600;
+}
+
+.btn.yellow:not(.btn-outline) {
+    background-color: #ffd600;
+}

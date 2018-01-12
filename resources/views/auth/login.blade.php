@@ -79,7 +79,7 @@
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-circle green">
+                                    <button type="submit" class="btn btn-circle yellow">
                                         Login
                                     </button>
 

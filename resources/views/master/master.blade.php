@@ -40,6 +40,7 @@
     <link href="/css/mtr-v4.5.6/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/mtr-v4.5.6/layouts/layout4/css/themes/light.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="/css/mtr-v4.5.6/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/custom/style.css" rel="stylesheet" type="text/css" />
     <!-- END THEME LAYOUT STYLES -->
 
     <link rel="shortcut icon" href="/favicon.ico" />
