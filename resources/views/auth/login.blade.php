@@ -2,7 +2,7 @@
 
 @section('content')
     <div style="width:800px; margin:0px auto;">
-        <img src="/style/img/lastrega.png" id="logo"/>
+        <img src="/style/img/logom5snuovo.jpg" id="logo"/>
     </div>
     <style>
         #logo {
@@ -11,10 +11,10 @@
 
         }
     </style>
-<div class="container">
+<div class="">
     <div class="row">
         <div class="col-md-8">
-            <div class="portlet box green">
+            <div class="portlet box m5s">
                 <div class="portlet-title">
                     <div class="caption">
                         Login
@@ -79,7 +79,7 @@
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-4">
-                                    <button type="submit" class="btn btn-circle yellow">
+                                    <button type="submit" class="btn btn-circle m5s">
                                         Login
                                     </button>
 

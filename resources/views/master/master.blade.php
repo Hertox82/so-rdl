@@ -57,15 +57,6 @@
 
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-
-    <!-- BEGIN SIDEBAR -->
-<?php
-
-// qui ci andrà la sidebar
-
-?>
-<!-- END SIDEBAR -->
-
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
         <!-- BEGIN CONTENT BODY -->

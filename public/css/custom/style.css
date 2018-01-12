@@ -6,14 +6,23 @@
 body { background-color: white;}
 
 
+.portlet.box.m5s > .portlet-title, .portlet.m5s, .portlet > .portlet-body.m5s {
+    background-color: #ffd600;
+}
+
 .portlet.box.green > .portlet-title, .portlet.green, .portlet > .portlet-body.green {
     background-color: #ffd600;
 }
 
-.portlet.box.green {
+.portlet.box.m5s {
     border: 1px solid #ffd600;
 }
 
-.btn.yellow:not(.btn-outline) {
+.m5s {
     background-color: #ffd600;
+}
+
+.btn.m5s:not(.btn-outline) {
+    background-color: #ffd600;
+    color: white;
 }
