@@ -11,6 +11,9 @@
 
         }
     </style>
+    @push('script')
+    <script src="/js/cfCheck.js" type="application/javascript"></script>
+    @endpush
 
 <div class="">
     <div class="row">
@@ -116,7 +119,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="form-group {{ $errors->has('cod_fisc') ? ' has-error' : '' }}">
+                            <div id= "codF" class="form-group {{ $errors->has('cod_fisc') ? ' has-error' : '' }}">
                                 <label for="cod_fisc" class="col-md-4 control-label">Codice Fiscale *</label>
 
                                 <div class="col-md-6">
@@ -291,7 +294,7 @@
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-circle m5s">
+                                        <button type="submit" id="regist" class="btn btn-circle m5s" disabled>
                                             Registrami
                                         </button>
 
