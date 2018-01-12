@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="portlet box blue-hoki">
+            <div class="portlet box green">
                 <div class="portlet-title">
                     <div class="caption">
                         Registrazione
@@ -154,7 +154,7 @@
                             <div class="form-actions">
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-4">
-                                        <button type="submit" class="btn btn-circle blue-hoki">
+                                        <button type="submit" class="btn btn-circle yellow">
                                             Registrami
                                         </button>
 
