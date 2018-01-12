@@ -26,7 +26,7 @@
                         {{ csrf_field() }}
                         <div class="form-body">
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="name" class="col-md-4 control-label">Nome</label>
+                                <label for="name" class="col-md-4 control-label">Nome *</label>
 
                                 <div class="col-md-6">
                                     <div class="input-group">
@@ -43,6 +43,73 @@
 
                                 </div>
                             </div>
+                            <div class="form-group{{ $errors->has('surname') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Cognome *</label>
+
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-circle-left">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                        <input id="surname" type="text" class="form-control input-circle-right" name="surname" value="{{ old('surname') }}" required autofocus>
+                                    </div>
+                                    @if ($errors->has('surname'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('surname') }}</strong>
+                                        </span>
+                                    @endif
+
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('birthdate') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Data di Nascita</label>
+
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <select class="form-control" name="day" id="day">
+                                            @for($i=1; $i<32; $i++)
+                                                @if($i<10)
+                                                    <option value="{{'0'.$i}}">{{'0'.$i}}</option>
+                                                @else
+                                                <option value="{{$i}}">{{$i}}</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                        <select class="form-control" name="month" id="month">
+                                            @for($i=1; $i<13; $i++)
+                                                @if($i<10)
+                                                    <option value="{{'0'.$i}}">{{'0'.$i}}</option>
+                                                @else
+                                                    <option value="{{$i}}">{{$i}}</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                        <select class="form-control" name="year" id="year">
+                                            @for($i=2000; $i>1937; $i--)
+                                                <option value="{{$i}}">{{$i}}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                    @if ($errors->has('birthdate'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('birthdate') }}</strong>
+                                        </span>
+                                    @endif
+
+                                </div>
+                            </div>
+
+                            Comune di Nascita
+                            Codice Fiscale (con controllo formale)
+                            telefono
+                            Comune di Residenza
+                            Provincia di Residenza
+                            Indirizzo di Residenza
+                            CAP
+                            Municipio di Residenza
+                            Sezione Tessera Elettorale
+                            Note
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label for="email" class="col-md-4 control-label">E-Mail</label>
