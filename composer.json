@@ -24,7 +24,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Hardel\\": "packages/Hardel/src/app/"
         }
     },
     "autoload-dev": {
