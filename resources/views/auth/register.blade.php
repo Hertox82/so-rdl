@@ -295,7 +295,7 @@
                                 <div class="col-md-4"></div>
                                 <div class="col-md-8">
                                     <label class="mt-checkbox">
-                                        <input type="checkbox"> Ho letto l'Informativa sulla <a href="#">Privacy</a> e acconsento.
+                                        <input type="checkbox" id="privacy"> Ho letto l'Informativa sulla <a href="#">Privacy</a> e acconsento.
                                         <span></span>
                                     </label>
                                 </div>
