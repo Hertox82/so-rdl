@@ -47,11 +47,29 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $data['birthdate'] = $data['year'].'-'.$data['month'].'-'.$data['day'];
+
+        $data['comune_res'] = ucfirst(strtolower($data['comune_res']));
+
+        $validator = [
             'name' => 'required|string|max:255',
+            'birthdate' => 'required|date',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-        ]);
+            'comune_nasc' => 'required|string',
+            'cod_fisc'  => 'required|string|max:16',
+            'phone' => 'required',
+            'comune_res' => 'required|string',
+            'prov_res'  => 'required|string|max:2',
+            'ind_res'   => 'required',
+            'cap'       => 'required|max:5',
+            'sez'       => 'required'];
+
+        if($data['comune_res'] == 'Roma') {
+            $validator[] = ['mun_res' => 'required'];
+        }
+
+        return Validator::make($data, $validator);
     }
 
     /**
@@ -63,10 +81,31 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         pr($data,1);
-        return User::create([
+        $create = [
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-        ]);
+            'surname'   => $data['surname'],
+            'birthdate' => $data['birthdate'],
+            'comune_nasc' => $data['comune_nasc'],
+            'cod_fisc' => $data['cod_fisc'],
+            'phone' => $data['phone'],
+            'comune_res' => $data['comune_res'],
+            'prov_res' => $data['prov_res'],
+            'ind_res' => $data['ind_res'],
+            'cap' => $data['cap'],
+            'livello' => $data['livello'],
+            'sez' => $data['sez']
+        ];
+
+        if($data['comune_res'] == 'Roma') {
+            $create[] = ['mun_res' => $data['mun_res']];
+        }
+
+        if(isset($data['note']) and strlen($data['note'])>0) {
+            $create[] = ['note' => $data['note']];
+        }
+
+        return User::create($create);
     }
 }

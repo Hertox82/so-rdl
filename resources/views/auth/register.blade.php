@@ -111,7 +111,7 @@
                                 <label for="comune_nasc" class="col-md-4 control-label">Comune di Nascita *</label>
 
                                 <div class="col-md-6">
-                                    <input id="comune_nasc" type="text" class="form-control input-circle" name="comune_nasct" value="{{ old('comune_nasc') }}" required>
+                                    <input id="comune_nasc" type="text" class="form-control input-circle" name="comune_nasc" value="{{ old('comune_nasc') }}" required>
                                     @if ($errors->has('comune_nasc'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('comune_nasc') }}</strong>
