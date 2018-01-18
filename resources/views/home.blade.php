@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Tutte le sezioni sono al momento disabilitate
                 </div>
             </div>
         </div>

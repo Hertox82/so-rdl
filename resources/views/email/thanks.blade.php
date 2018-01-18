@@ -11,8 +11,21 @@
 
         }
     </style>
-    <p>
-        Email verificata! ora puoi accedere al Sistema Operativo per gli RDL.<br>
-        vai alla <a href="{{route('login')}}">login</a>
-    </p>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <div class="caption-subject font-dark bold uppercase">AVVISO</div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="alert alert-info">
+                        Email verificata! ora puoi accedere al Sistema Operativo per gli RDL.
+                    </div>
+                    <a class="btn default" href="{{route('login')}}">Vai al Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
