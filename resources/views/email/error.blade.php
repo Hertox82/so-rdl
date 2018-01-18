@@ -11,6 +11,21 @@
 
         }
     </style>
-
-    <p>Utente non trovato</p>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <div class="caption-subject font-dark bold uppercase">AVVISO</div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="alert alert-danger">
+                        Utente non trovato
+                    </div>
+                    <a class="btn default" href="{{route('login')}}">Vai al Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

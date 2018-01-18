@@ -1,9 +1,19 @@
-@extends('layouts.app')
+@extends('master.master')
 
 @section('content')
-<div class="container">
+    <div style="width:800px; margin:0px auto;">
+        <img src="/style/img/logom5snuovo.jpg" id="logo"/>
+    </div>
+    <style>
+        #logo {
+            max-block-size: 100px;
+            margin-bottom: 10px;
+
+        }
+    </style>
+<div class="">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading">Reset Password</div>
 
