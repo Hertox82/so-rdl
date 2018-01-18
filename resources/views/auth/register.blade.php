@@ -14,9 +14,6 @@
     @push('script')
     <script src="/js/cfCheck.js" type="application/javascript"></script>
     @endpush
-    <?php
-        print_r($errors);
-    ?>
 <div class="">
     <div class="row">
         <div class="col-md-8">
