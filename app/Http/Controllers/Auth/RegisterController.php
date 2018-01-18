@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\VerifyEmail;
 use Illuminate\Http\Request;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -130,6 +131,11 @@ class RegisterController extends Controller
         }
 
         $user = User::create($create);
+        DB::table('users_roles')->insert([
+            'idRole' => 3,
+            'idUser' => $user->id
+        ]);
+
         $dataUser = User::findOrFail($user->id);
         $this->sendMail($dataUser);
 
