@@ -11,6 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Auth::routes();
+
+Route::get('/verifica-email',[
+    'as'    => 'verifyEmail',
+    'uses'  => 'Auth\RegisterController@verifyEmail'
+]);
+
+Route::get('/email-verificata/{token}',[
+    'as'    => 'verification',
+    'uses'  => 'Auth\RegisterController@verification'
+]);
+
+Route::group(['middleware' => ['auth']],function(){
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    Route::get('/home', 'HomeController@index')->name('home');
 });
+

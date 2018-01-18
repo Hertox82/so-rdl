@@ -1,0 +1,85 @@
+{
+  "titolo": "Regioni",
+  "dati": [
+    {
+      "nome": "Piemonte",
+      "cod": "01"
+    },
+    {
+      "nome": "Valle D\'Aosta",
+      "cod": "02"
+    },
+    {
+      "nome": "Lombardia",
+      "cod": "03"
+    },
+    {
+      "nome": "Trentino A.A.",
+      "cod": "04"
+    },
+    {
+      "nome": "Veneto",
+      "cod": "05"
+    },
+    {
+      "nome": "Friuli V.G.",
+      "cod": "06"
+    },
+    {
+      "nome": "Liguria",
+      "cod": "07"
+    },
+    {
+      "nome": "Emilia Romagna",
+      "cod": "08"
+    },
+    {
+      "nome": "Toscana",
+      "cod": "09"
+    },
+    {
+      "nome": "Umbria",
+      "cod": "10"
+    },
+    {
+      "nome": "Marche",
+      "cod": "11"
+    },
+    {
+      "nome": "Lazio",
+      "cod": "12"
+    },
+    {
+      "nome": "Abruzzo",
+      "cod": "13"
+    },
+    {
+      "nome": "Molise",
+      "cod": "14"
+    },
+    {
+      "nome": "Campania",
+      "cod": "15"
+    },
+    {
+      "nome": "Puglia",
+      "cod": "16"
+    },
+    {
+      "nome": "Basilicata",
+      "cod": "17"
+    },
+    {
+      "nome": "Calabria",
+      "cod": "18"
+    },
+    {
+      "nome": "Sicilia",
+      "cod": "19"
+    },
+    {
+      "nome": "Sardegna",
+      "cod": "20"
+    }
+  ]
+}
