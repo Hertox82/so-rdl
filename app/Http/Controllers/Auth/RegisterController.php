@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\VerifyEmail;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -47,26 +50,24 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $data['birthdate'] = $data['year'].'-'.$data['month'].'-'.$data['day'];
-
         $data['comune_res'] = ucfirst(strtolower($data['comune_res']));
 
         $validator = [
-            'name' => 'required|string|max:255',
-            'birthdate' => 'required|date',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'comune_nasc' => 'required|string',
-            'cod_fisc'  => 'required|string|max:16',
-            'phone' => 'required',
-            'comune_res' => 'required|string',
-            'prov_res'  => 'required|string|max:2',
-            'ind_res'   => 'required',
-            'cap'       => 'required|max:5',
-            'sez'       => 'required'];
+            'name'          => 'required|string|max:255',
+            'surname'       => 'required',
+            'email'         => 'required|string|email|max:255|unique:users',
+            'password'      => 'required|string|min:6|confirmed',
+            'comune_nasc'   => 'required|string',
+            'cod_fisc'      => 'required|string|max:16',
+            'phone'         => 'required',
+            'comune_res'    => 'required|string',
+            'prov_res'      => 'required|string|max:2',
+            'ind_res'       => 'required',
+            'cap'           => 'required|max:5',
+            'sez'           => 'required'];
 
         if($data['comune_res'] == 'Roma') {
-            $validator[] = ['mun_res' => 'required'];
+            $validator['mun_res'] =  'required';
         }
 
         return Validator::make($data, $validator);
@@ -80,7 +81,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        pr($data,1);
+        $data['birthdate'] = $data['year'].'-'.$data['month'].'-'.$data['day'];
+        $data['comune_res'] = ucfirst(strtolower($data['comune_res']));
+        $data['prov_res'] = strtoupper($data['prov_res']);
+        $data['cod_fisc'] = strtoupper($data['cod_fisc']);
+
         $create = [
             'name' => $data['name'],
             'email' => $data['email'],
@@ -95,8 +100,10 @@ class RegisterController extends Controller
             'ind_res' => $data['ind_res'],
             'cap' => $data['cap'],
             'livello' => $data['livello'],
-            'sez' => $data['sez']
+            'sez' => $data['sez'],
+            'verifyToken' => base64_encode($data['email'])
         ];
+
 
         if($data['comune_res'] == 'Roma') {
             $create[] = ['mun_res' => $data['mun_res']];
@@ -106,6 +113,34 @@ class RegisterController extends Controller
             $create[] = ['note' => $data['note']];
         }
 
-        return User::create($create);
+        $user = User::create($create);
+        $dataUser = User::findOrFail($user->id);
+        $this->sendMail($dataUser);
+
+        return $user;
+
+    }
+
+    public function verification($token) {
+        $user = User::where(['verifyToken' => $token, 'status' => 0])->first();
+
+        if($user) {
+            User::where(['verifyToken' => $token, 'status' => 0])->update(['verifyToken' => NULL, 'status' => 1]);
+             return view('email.thanks');
+        }
+        else {
+            return view('email.error');
+        }
+    }
+
+    public function sendMail($dataUser) {
+
+        Mail::to($dataUser['email'])->send(new VerifyEmail($dataUser));
+    }
+
+    public function verifyEmail(Request $request) {
+
+        return view('email.verifyemail');
+
     }
 }

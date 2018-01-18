@@ -27,6 +27,8 @@ class AddColumnsToUsersTable extends Migration
             $table->tinyInteger('livello')->unsigned()->default(1)->after('mun_res');
             $table->string('sez')->after('livello');
             $table->text('note')->after('sez')->nullable();
+            $table->string('verifyToken')->nullable()->after('note');
+            $table->boolean('status')->after('verifyToken')->default(0);
 
         });
     }
@@ -52,6 +54,8 @@ class AddColumnsToUsersTable extends Migration
             $table->dropColumn('livello');
             $table->dropColumn('sez');
             $table->dropColumn('note');
+            $table->dropColumn('verifyToken');
+            $table->dropColumn('status');
         });
     }
 }
