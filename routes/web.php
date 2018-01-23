@@ -26,9 +26,7 @@ Route::get('/email-verificata/{token}',[
 ]);
 
 Route::group(['middleware' => ['auth']],function(){
-    Route::get('/', function () {
-        return view('home');
-    });
+    Route::get('/', 'HomeController@index');
 
     Route::get('/home', 'HomeController@index')->name('home');
 
