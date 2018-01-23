@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 8]> <html lang="{{ app()->getLocale() }}" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="{{ app()->getLocale() }}" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
 
@@ -57,9 +57,11 @@
     <div class="page-header-inner ">
 
         <!-- BEGIN LOGO -->
-        <div class="page-logo">
+        <div class="page-logo" style="position: relative;">
 
-            <a href="{{ route('dashboard') }}"><img src="{{ env('TEMPLATE_LOGO', '/style/img/lastrega2_piccola.png') }}" alt="WALS" class="logo-default" style="{{ env('TEMPLATE_LOGO_STYLE', 'max-width:185px') }}"/></a>
+            <a href="{{ route('dashboard') }}"><img src="{{ env('TEMPLATE_LOGO', '/style/img/logom5snuovo.jpg') }}" alt="SORdl" class="logo-default" style="{{ env('TEMPLATE_LOGO_STYLE', 'max-width:185px;     max-width: 65px;
+    position: absolute;
+    top: -24px;') }}"/></a>
 
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
@@ -111,8 +113,9 @@
                             <span class="username username-hide-on-mobile">  {{ Auth::user()->name }} </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
                             @if($Activeuser->gravatar != 'none')
-                                <img alt="" class="img-circle" src="{{ $Activeuser->gravatar }}" /> </a>
+                                <img alt="" class="img-circle" src="{{ $Activeuser->gravatar }}" />
                             @endif
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <!--
                             <li class="divider"> </li> -->

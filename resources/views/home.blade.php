@@ -1,23 +1,14 @@
-@extends('layouts.app')
+@extends('hardel::master.template')
+
+
+@section('title', @$title)
+
+@section('h1', @$title)
+@section('h2', @$subTitle)
+
+@section('breadcrumb')
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    Tutte le sezioni sono al momento disabilitate
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

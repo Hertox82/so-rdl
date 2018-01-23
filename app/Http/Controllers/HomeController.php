@@ -11,9 +11,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
         $this->middleware('auth');
+
+        parent::__construct($request);
     }
 
     /**
