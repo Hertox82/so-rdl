@@ -4,7 +4,7 @@
 
 var cfCheckManager = function() {
 
-    var urlCf = 'http://webservices.dotnethell.it//codicefiscale.asmx/ControllaCodiceFiscale';
+    var urlCf = 'http://webservices.dotnethell.it/codicefiscale.asmx/ControllaCodiceFiscale';
     var cfBool = false;
     var privacyBool = false;
 
@@ -14,12 +14,12 @@ var cfCheckManager = function() {
            if(cod.length >= 16) {
                $.ajax({
                    url: urlCf,
-                   method: 'GET',
-                   data: {CodiceFiscale: cod}
+                   method: 'POST',
+                   data: {CodiceFiscale: cod},
                }).done(function(response){
-                   console.log(response);
-                   var prova = response.activeElement.childNodes;
-                   var text = prova[0].nodeValue;
+                   var text = $(response).find('string')[0].innerHTML;
+                   //var prova = response.activeElement.childNodes;
+                   //var text = prova[0].nodeValue;
                    var grp = $('#codF');
                    var btn = $('#regist');
                    if(text == 'Il codice non è valido!') {
