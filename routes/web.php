@@ -34,5 +34,13 @@ Route::group(['middleware' => ['auth']],function(){
         'as'            => 'dashboard',
         'uses'          => 'HomeController@index'
     ]);
+
+    /*
+    |----------------------------------------------------------------
+    | Utent
+    |----------------------------------------------------------------
+    */
+
+    Route::resource('users','Users\UsersController');
 });
 

@@ -16,19 +16,19 @@ use Validator;
 
 class HardelController extends BaseController
 {
-
     public function __construct(Request $request)
     {
         // Avvia l'applicazione
         $this->startApp();
     }
 
-    public function startApp(){
+    public function startApp($id=null){
 
         // Condivisione menu
         $hMenu = array();
         if(method_exists($this, 'buildMenu')) {
-            $hMenu = $this->buildMenu();
+            pr('buildMenu');
+            $hMenu = $this->buildMenu($id);
         }
         view()->share('hMenu', $hMenu);
 
