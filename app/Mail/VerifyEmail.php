@@ -31,7 +31,7 @@ class VerifyEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('rdl-noreply@roma5stelle.org')
+        return $this->from('noreply@rdlm5s.it')
             ->subject('Verifica Account')
             ->view('email.send');
     }

@@ -27,7 +27,6 @@ class HardelController extends BaseController
         // Condivisione menu
         $hMenu = array();
         if(method_exists($this, 'buildMenu')) {
-            pr('buildMenu');
             $hMenu = $this->buildMenu($id);
         }
         view()->share('hMenu', $hMenu);
