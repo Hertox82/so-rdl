@@ -20,6 +20,10 @@ Route::get('/verifica-email',[
     'uses'  => 'Auth\RegisterController@verifyEmail'
 ]);
 
+Route::get('/privacy-policy',function(){
+   return view('privacy.info');
+})->name('privacy');
+
 Route::get('/email-verificata/{token}',[
     'as'    => 'verification',
     'uses'  => 'Auth\RegisterController@verification'

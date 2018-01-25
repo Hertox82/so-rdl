@@ -1,6 +1,28 @@
 @extends('master.master')
 
 @section('content')
+    <div class="row">
+        <div class="col-md-8">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <div class="caption-subject font-dark bold uppercase">Info</div>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="note note-info">
+                        <h4>Benvenuto su RDL M5S!</h4>
+                        <p>Questa è la Piattaforma Operativa per i Rappresentanti di lista del Movimento 5 Stelle per le prossime elezioni.<br>
+                            Iscrivendoti darai la tua disponibilità a rappresentare il MoVimento al seggio, segui le istruzioni e sarai ricontattato dal referente della tua zona.<br>
+                            <br>
+                            Effettuando la registrazione al sito accetti i termini di servizio e le disposizioni sulla privacy e proprietà dei dati previste da questa piattaforma: per maggiori informazioni, leggi <a href="{{route('privacy')}}" target="_blank">qui</a>
+                        </p>
+                    </div>
+                    <a class="btn default" href="{{route('register')}}">Vai al Modulo di Registrazione</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div style="width:800px; margin:0px auto;">
         <img src="/style/img/logom5snuovo.jpg" id="logo"/>
     </div>

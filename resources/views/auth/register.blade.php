@@ -272,10 +272,10 @@
                                 </div>
                             </div>
                             <div class="form-group {{ $errors->has('sez') ? ' has-error' : '' }}">
-                                <label for="sez" class="col-md-4 control-label">Sezione Tessera Elettorale *</label>
+                                <label for="sez" class="col-md-4 control-label">Sezione Tessera Elettorale</label>
 
                                 <div class="col-md-6">
-                                    <input id="sez" type="text" class="form-control input-circle" name="sez" value="{{ old('sez') }}"  required>
+                                    <input id="sez" type="text" class="form-control input-circle" name="sez" value="{{ old('sez') }}">
                                     @if ($errors->has('sez'))
                                         <span class="help-block">
                                                 <strong>{{ $errors->first('sez') }}</strong>
@@ -294,7 +294,7 @@
                                 <div class="col-md-4"></div>
                                 <div class="col-md-8">
                                     <label class="mt-checkbox">
-                                        <input type="checkbox" id="privacy"> Ho letto l'Informativa sulla <a href="#">Privacy</a> e acconsento.
+                                        <input type="checkbox" id="privacy"> Ho letto l'Informativa sulla <a href="{{route('privacy')}}" target="_blank">Privacy</a> e acconsento.
                                         <span></span>
                                     </label>
                                 </div>

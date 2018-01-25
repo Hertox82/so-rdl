@@ -25,7 +25,7 @@ class AddColumnsToUsersTable extends Migration
             $table->string('cap')->after('ind_res');
             $table->integer('mun_res')->unsigned()->after('cap')->nullable();
             $table->tinyInteger('livello')->unsigned()->default(1)->after('mun_res');
-            $table->string('sez')->after('livello');
+            $table->string('sez')->nullable()->after('livello');
             $table->text('note')->after('sez')->nullable();
             $table->string('verifyToken')->nullable()->after('note');
             $table->boolean('status')->after('verifyToken')->default(0);

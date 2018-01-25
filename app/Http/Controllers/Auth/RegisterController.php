@@ -81,8 +81,8 @@ class RegisterController extends Controller
             'comune_res'    => 'required|string',
             'prov_res'      => 'required|string|max:2',
             'ind_res'       => 'required',
-            'cap'           => 'required|max:5',
-            'sez'           => 'required'];
+            'cap'           => 'required|max:5'
+        ];
 
         if($data['comune_res'] == 'Roma') {
             $validator['mun_res'] =  'required';
@@ -118,7 +118,6 @@ class RegisterController extends Controller
             'ind_res' => $data['ind_res'],
             'cap' => $data['cap'],
             'livello' => $data['livello'],
-            'sez' => $data['sez'],
             'verifyToken' => base64_encode($data['email'])
         ];
 
@@ -131,9 +130,13 @@ class RegisterController extends Controller
             $create[] = ['note' => $data['note']];
         }
 
+        if(isset($data['sez']) and strlen($data['sez'])>0) {
+            $create[] = ['sez' => $data['sez']];
+        }
+
         $user = User::create($create);
         DB::table('users_roles')->insert([
-            'idRole' => 3,
+            'idRole' => 4,
             'idUser' => $user->id
         ]);
 
