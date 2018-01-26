@@ -23,7 +23,7 @@
                 <div class="portlet-body">
                     <div class="note note-info">
                         <h4>Controlla la tua email!</h4>
-                        <p>per completare la tua registrazione, controlla la tua casella email. Troverai una mail, segui le istruzioni!</p>
+                        <p>per completare la tua registrazione, controlla la tua casella email (anche la cartella SPAM). Troverai una mail, segui le istruzioni!</p>
                     </div>
                     <a class="btn default" href="{{route('login')}}">Vai al Login</a>
                 </div>

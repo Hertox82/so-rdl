@@ -48,10 +48,10 @@
 </head>
 <!-- END HEAD -->
 
-<body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo">
+<body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo" style="background-color: #f3f3f3; ">
 
 <!-- BEGIN HEADER -->
-<div class="page-header navbar navbar-fixed-top">
+<div class="page-header navbar navbar-fixed-top" style="background-color:#ffd600 !important;">
 
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">

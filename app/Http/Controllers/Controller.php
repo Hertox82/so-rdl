@@ -24,7 +24,7 @@ class Controller extends HController
         ]);
         if($id != null) {
             $RelUser = DB::table('users_roles')->where(['idUser' => $id])->first();
-            if($RelUser->idRole != 3) {
+            if($RelUser->idRole === 1 or $RelUser->idRole === 2) {
                 $menu = $menu->add([
                     'label' => 'Utenti',
                     'routeName' => 'users.index',
