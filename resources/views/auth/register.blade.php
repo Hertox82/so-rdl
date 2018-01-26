@@ -294,7 +294,7 @@
                                 <div class="col-md-4"></div>
                                 <div class="col-md-8">
                                     <label class="mt-checkbox">
-                                        <input type="checkbox" id="privacy"> Ho letto l'Informativa sulla <a href="{{route('privacy')}}" target="_blank">Privacy</a> e acconsento.
+                                        <input type="checkbox" id="privacy"> Ho letto l'Informativa sulla <a href="{{route('privacy')}}" target="_blank">Privacy</a>,i <a href="{{route('term')}}" target="_blank">Termini di Servizio</a> e acconsento.
                                         <span></span>
                                     </label>
                                 </div>

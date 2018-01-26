@@ -24,6 +24,10 @@ Route::get('/privacy-policy',function(){
    return view('privacy.info');
 })->name('privacy');
 
+Route::get('/termini-di-servizio',function(){
+    return view('privacy.termini-di-servizio');
+})->name('term');
+
 Route::get('/email-verificata/{token}',[
     'as'    => 'verification',
     'uses'  => 'Auth\RegisterController@verification'

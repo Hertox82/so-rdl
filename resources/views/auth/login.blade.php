@@ -15,7 +15,7 @@
                         <p>Questa è la Piattaforma Operativa per i Rappresentanti di lista del Movimento 5 Stelle per le prossime elezioni.<br>
                             Iscrivendoti darai la tua disponibilità a rappresentare il MoVimento al seggio, segui le istruzioni e sarai ricontattato dal referente della tua zona.<br>
                             <br>
-                            Effettuando la registrazione al sito accetti i termini di servizio e le disposizioni sulla privacy e proprietà dei dati previste da questa piattaforma: per maggiori informazioni, leggi <a href="{{route('privacy')}}" target="_blank">qui</a>
+                            Effettuando la registrazione al sito accetti i <a href="{{route('term')}}" target="_blank">termini di servizio</a> e le disposizioni sulla privacy e proprietà dei dati previste da questa piattaforma: per maggiori informazioni, leggi <a href="{{route('privacy')}}" target="_blank">qui</a>
                         </p>
                     </div>
                     <a class="btn default" href="{{route('register')}}">Vai al Modulo di Registrazione</a>
