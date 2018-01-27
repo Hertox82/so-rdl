@@ -11,6 +11,7 @@ return [
     'EditManager'           => Hardel\Facades\EditManager::class,
     'Menu'                  => Hardel\Facades\Menu::class,
     'HModel'                => Hardel\Support\HModel::class,
+    'UHModel'               => Hardel\Support\UHModel::class,
     'HController'           => Hardel\Controllers\HardelController::class,
     'AbstractBlock'         => Hardel\Support\Ab\AbstractBlock::class,
     'AbstractField'         => Hardel\Support\Ab\AbstractField::class,

@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use DB;
 
@@ -98,36 +99,86 @@ class UsersController extends Controller
             'field' => 'name',
             'validation' => 'required',
             'validationMess' => [
-                'required' => 'Il campo nome è obbligatorio',
+                'required' => 'Il campo Nome è obbligatorio',
             ],
         ])->addCp('fl','text',[
             'label' => 'Cognome',
             'field' => 'surname',
             'validation' => 'required',
             'validationMess' => [
-                'required' => 'Il campo nome è obbligatorio',
+                'required' => 'Il campo Cognome è obbligatorio',
             ],
         ])->addCp('fl','date',[
             'label' => 'Data di Nascita',
             'field' => 'birthdate',
             'validation' => 'required',
             'validationMess' => [
-                'required' => 'Il campo nome è obbligatorio',
+                'required' => 'Il campo Data di Nascita è obbligatorio',
             ],
         ])->addCp('fl','text',[
             'label' => 'Comune di nascita',
             'field' => 'comune_nasc',
             'validation' => 'required',
             'validationMess' => [
-                'required' => 'Il campo nome è obbligatorio',
+                'required' => 'Il campo Comune di Nascita è obbligatorio',
             ],
         ])->addCp('fl','text',[
             'label' => 'Codice Fiscale',
             'field' => 'cod_fisc',
             'validation' => 'required',
             'validationMess' => [
-                'required' => 'Il campo nome è obbligatorio',
+                'required' => 'Il campo Codice Fiscale è obbligatorio',
             ],
+        ])->addCp('fl','phone',[
+            'label' => 'Telefono',
+            'field' => 'phone',
+            'validation' => 'required',
+            'validationMess' => [
+                'required' => 'Il campo Telefono è obbligatorio',
+            ],
+        ])->addCp('fl','text',[
+            'label' => 'Comune Residenza',
+            'field' => 'comune_res',
+            'validation' => 'required',
+            'validationMess' => [
+                'required' => 'Il campo Comune di Residenza è obbligatorio',
+            ],
+        ])->addCp('fl','prov',[
+            'label' => 'Provincia di Residenza',
+            'field' => 'prov_res',
+            'validation' => 'required',
+            'validationMess' => [
+                'required' => 'Il campo Provincia di Residenza è obbligatorio',
+            ],
+        ])->addCp('fl','text',[
+            'label' => 'Indirizzo Residenza',
+            'field' => 'ind_res',
+            'validation' => 'required',
+            'validationMess' => [
+                'required' => 'Il campo Indirizzo di Residenza è obbligatorio',
+            ],
+        ])->addCp('fl','text',[
+            'label' => 'CAP',
+            'field' => 'cap',
+            'validation' => 'required',
+            'maxLength' => 5,
+            'validationMess' => [
+                'required' => 'Il campo CAP è obbligatorio',
+            ],
+        ])->addCp('fl','select',[
+            'label' => 'Municipio di Residenza',
+            'field' => 'mun_res',
+            'list'  => User::gVals('mun_res')
+        ])->addCp('fl','select',[
+            'label' => 'Esperienza',
+            'field' => 'livello',
+            'list'  => User::gVals('livello')
+        ])->addCp('fl','text',[
+                'label' => 'Sezione Tessera Elettorale',
+                'field' => 'sez',
+        ])->addCp('fl','textarea',[
+            'label' => 'Note',
+            'field' => 'note',
         ]);
 
 

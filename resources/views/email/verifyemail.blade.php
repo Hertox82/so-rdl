@@ -3,7 +3,7 @@
 
 @section('content')
     <div style="width:800px; margin:0px auto;">
-        <img src="/style/img/logom5snuovo.jpg" id="logo"/>
+        <img src="/style/img/logom5s.png" id="logo"/>
     </div>
     <style>
         #logo {

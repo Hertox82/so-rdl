@@ -123,15 +123,15 @@ class RegisterController extends Controller
 
 
         if($data['comune_res'] == 'Roma') {
-            $create[] = ['mun_res' => $data['mun_res']];
+            $create['mun_res'] = $data['mun_res'];
         }
 
         if(isset($data['note']) and strlen($data['note'])>0) {
-            $create[] = ['note' => $data['note']];
+            $create['note'] = $data['note'];
         }
 
         if(isset($data['sez']) and strlen($data['sez'])>0) {
-            $create[] = ['sez' => $data['sez']];
+            $create['sez'] = $data['sez'];
         }
 
         $user = User::create($create);

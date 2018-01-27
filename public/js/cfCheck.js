@@ -71,6 +71,11 @@ var cfCheckManager = function() {
         });
     }
 
+    var checkBoth = function() {
+        var code = $('#cod_fisc').val();
+        checkCF(code);
+    }
+
     var handlePrivacy = function(){
         $('#privacy').click(function(){
             var btn = $('#regist');
@@ -90,6 +95,9 @@ var cfCheckManager = function() {
             handleCf();
             handlePrivacy();
             handleFocus();
+            $(document).ready(function(){
+                checkBoth();
+            })
         }
     }
 }();

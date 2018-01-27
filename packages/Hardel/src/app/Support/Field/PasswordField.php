@@ -18,7 +18,7 @@ class PasswordField extends AbstractField
     protected $ifNull = 'notuse';
 
     public function saving($value) {
-        if(strlen($value) != 0) $value = md5($value);
+        if(strlen($value) != 0) $value = bcrypt($value);
 
         return $value;
     }

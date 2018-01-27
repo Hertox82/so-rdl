@@ -15,7 +15,9 @@ use Hardel\Support\Field\DateField;
 use Hardel\Support\Field\EmailField;
 use Hardel\Support\Field\HiddenField;
 use Hardel\Support\Field\PasswordField;
+use Hardel\Support\Field\PhoneField;
 use Hardel\Support\Field\PriceField;
+use Hardel\Support\Field\ProvField;
 use Hardel\Support\Field\SelectField;
 use Hardel\Support\Field\TextareaField;
 use Hardel\Support\Field\TextField;
@@ -136,6 +138,13 @@ class HardelServiceProvider extends ServiceProvider
 
         $this->app->bind('text',function($app) {
             return new TextField();
+        });
+
+        $this->app->bind('phone',function($app) {
+            return new PhoneField();
+        });
+        $this->app->bind('prov',function($app) {
+            return new ProvField();
         });
     }
 }

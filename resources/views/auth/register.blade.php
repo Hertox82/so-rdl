@@ -2,7 +2,7 @@
 
 @section('content')
     <div style="width:800px; margin:0px auto;">
-        <img src="/style/img/logom5snuovo.jpg" id="logo"/>
+        <img src="/style/img/logom5s.png" id="logo"/>
     </div>
     <style>
         #logo {
@@ -71,9 +71,9 @@
                                     <select class="form-control input-xsmall" name="day" id="day">
                                         @for($i=1; $i<32; $i++)
                                             @if($i<10)
-                                                <option value="{{'0'.$i}}">{{'0'.$i}}</option>
+                                                <option value="{{'0'.$i}}" @if(old('day') == ('0'.$i)) selected @endif>{{'0'.$i}}</option>
                                             @else
-                                            <option value="{{$i}}">{{$i}}</option>
+                                            <option value="{{$i}}" @if(old('day') == $i) selected @endif>{{$i}}</option>
                                             @endif
                                         @endfor
                                     </select>
@@ -83,9 +83,9 @@
                                     <select class="form-control input-xsmall" name="month" id="month">
                                         @for($i=1; $i<13; $i++)
                                             @if($i<10)
-                                                <option value="{{'0'.$i}}">{{'0'.$i}}</option>
+                                                <option value="{{'0'.$i}}" @if(old('month') == ('0'.$i)) selected @endif>{{'0'.$i}}</option>
                                             @else
-                                                <option value="{{$i}}">{{$i}}</option>
+                                                <option value="{{$i}}" @if(old('day') == $i) selected @endif>{{$i}}</option>
                                             @endif
                                         @endfor
                                     </select>
@@ -94,7 +94,7 @@
                                     <label id="year">Anno</label>
                                     <select class="form-control input-xsmall" name="year" id="year">
                                         @for($i=2000; $i>1937; $i--)
-                                            <option value="{{$i}}">{{$i}}</option>
+                                            <option value="{{$i}}" @if(old('year') == $i) selected @endif>{{$i}}</option>
                                         @endfor
                                     </select>
                                 </div>
@@ -287,7 +287,7 @@
                                 <label for="cap" class="col-md-4 control-label">Note</label>
 
                                 <div class="col-md-6">
-                                    <textarea id="note" type="text" class="form-control" name="note" value="{{ old('note') }}" style="height: 154px;"></textarea>
+                                    <textarea id="note"  class="form-control" name="note"  style="height: 154px;">{{ old('note') }}</textarea>
                                 </div>
                             </div>
                             <div class="form-group {{ $errors->has('note') ? ' has-error' : '' }}">

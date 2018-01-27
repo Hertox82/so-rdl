@@ -59,7 +59,7 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo" style="position: relative;">
 
-            <a href="{{ route('dashboard') }}"><img src="{{ env('TEMPLATE_LOGO', '/style/img/logom5snuovo.jpg') }}" alt="SORdl" class="logo-default" style="{{ env('TEMPLATE_LOGO_STYLE', 'max-width:185px;     max-width: 65px;
+            <a href="{{ route('dashboard') }}"><img src="{{ env('TEMPLATE_LOGO', '/style/img/logom5s.png') }}" alt="SORdl" class="logo-default" style="{{ env('TEMPLATE_LOGO_STYLE', 'max-width:185px;     max-width: 65px;
     position: absolute;
     top: -24px;') }}"/></a>
 
