@@ -44,6 +44,7 @@ class EditManager{
             'title' => null,
             'subTitle' => null,
             'routeAfterSave' => null,
+            'routePrefix' => null,
         );
         $param = cleanParam($args, $default);
 
@@ -64,7 +65,8 @@ class EditManager{
         $this->generalInfo['view'] = $param['view'];
         //$this->routeAfterSave = $param['routeAfterSave'];
 
-        $this->routePrefix = $this->findRoute();
+        if($this->routePrefix == null)
+            $this->routePrefix = $this->findRoute();
 
         // Gestione sessione old
         $old = old();
@@ -308,10 +310,14 @@ class EditManager{
         // Inizializza
         $activeLabel = 0;
 
+        $submitUrl ='';
+        $method = '';
         // Individuazione routing
-        $submitUrl = route($this->routePrefix . '.store');
-        $method = 'POST';
-        if($this->type == 'update') {
+        if($this->type == 'store') {
+            $submitUrl = route($this->routePrefix . '.store');
+            $method = 'POST';
+        }
+        else if($this->type == 'update') {
             $submitUrl = route($this->routePrefix . '.update', $this->objId);
             $method = 'PUT';
         }

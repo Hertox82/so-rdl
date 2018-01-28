@@ -11,6 +11,7 @@
                 </div>
                 <div class="portlet-body">
                     <div class="note note-info">
+<<<<<<< HEAD
                         <h4>Benvenuto su RDL M5S!</h4>
                         <p>
                             Questa è la Piattaforma Operativa per i Rappresentanti di Lista del Movimento 5 Stelle
@@ -19,6 +20,10 @@
                             <br />
                             Se sei un Rappresentante di Lista in una regione diversa dal LAZIO, ti preghiamo di non effettuare la registrazione e di fare riferimento al coordinatore RdL della tua regione.
                             <br />
+=======
+                        <h4>Benvenuto su RDL M5S LAZIO!</h4>
+                        <p>Questa è la Piattaforma Operativa per i Rappresentanti di lista del Movimento 5 Stelle per le prossime elezioni.<br>
+>>>>>>> refs/remotes/Hertox82/master
                             Iscrivendoti darai la tua disponibilità a rappresentare il MoVimento al seggio, segui le istruzioni e sarai ricontattato dal referente della tua zona.<br>
                             <br />
                             Effettuando la registrazione al sito accetti i <a href="{{route('term')}}" target="_blank">termini di servizio</a> e le disposizioni sulla privacy e proprietà dei dati previste da questa piattaforma: per maggiori informazioni, leggi <a href="{{route('privacy')}}" target="_blank">qui</a>

@@ -63,7 +63,19 @@ class User extends UHModel
             $return[] = ['value' => 2, 'label' => 'Con Esperienza'];
             $return[] = ['value' => 3, 'label' => 'Molto Esperto'];
         }
+        else if ($field === 'idRole') {
+            $list = Role::all();
+
+            foreach ($list as $Role) {
+                $return[] = ['value' => $Role->id, 'label' => $Role->nome];
+            }
+        }
 
         return $return;
     }
+
+   /* public function role() {
+        return $this->belongsToMany('App\Role','users_roles','idUser'.'idRole');
+    } */
+
 }
