@@ -294,7 +294,10 @@
                                 <div class="col-md-4"></div>
                                 <div class="col-md-8">
                                     <label class="mt-checkbox">
-                                        <input type="checkbox" id="privacy"> Ho letto l'Informativa sulla <a href="{{route('privacy')}}" target="_blank">Privacy</a>,i <a href="{{route('term')}}" target="_blank">Termini di Servizio</a> e acconsento.
+                                        <input type="checkbox" id="privacy">
+											Ho preso visione dell'<a href="{{route('privacy')}}" target="_blank">Informativa sulla Privacy</a>, 
+											acconsento al trattamento dei dati per le finalità indicate 
+											e accetto i <a href="{{route('term')}}" target="_blank">Termini di Servizio</a>.
                                         <span></span>
                                     </label>
                                 </div>

@@ -20,3 +20,8 @@ Homestead.json
 .rocketeer/
 
 .idea/
+
+
+# VS2017 environment files (Valerio)
+.vs/
+so-rdl.sln

@@ -4,7 +4,9 @@
 
 var cfCheckManager = function() {
 
-    var urlCf = 'http://webservices.dotnethell.it/codicefiscale.asmx/ControllaCodiceFiscale';
+	var regExp = "/^(?:[B-DF-HJ-NP-TV-Z](?:[AEIOU]{2}|[AEIOU]X)|[AEIOU]{2}X|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[\dLMNP-V][1-9MNP-V]|[1-9MNP-V][0L]))[A-Z]$/i";
+
+    // var urlCf = 'http://webservices.dotnethell.it/codicefiscale.asmx/ControllaCodiceFiscale';
     var cfBool = false;
     var privacyBool = false;
 
@@ -18,52 +20,24 @@ var cfCheckManager = function() {
     }
 
     var checkCF = function (cod) {
-        if (cod.length>=16) {
-            $.ajax({
-                url: urlCf,
-                method: 'POST',
-                data: {CodiceFiscale: cod},
-            }).done(function(response){
-                var text = $(response).find('string')[0].innerHTML;
-                //var prova = response.activeElement.childNodes;
-                //var text = prova[0].nodeValue;
-                var grp = $('#codF');
-                var btn = $('#regist');
-                if(text == 'Il codice non è valido!') {
+		/* 2018.01.27 - Valerio */
 
-                    if(grp.hasClass('has-success')) {
-                        grp.removeClass('has-success');
-                        grp.addClass('has-error');
-                        //btn.prop("disabled", true);
-                        cfBool = false;
-                    }
-                    else {
-                        grp.addClass('has-error');
-                        //btn.prop("disabled", true);
-                        cfBool = false;
-                    }
+		if (cod.length != 16 || preg_match(regExp, cod)) {
+			// CF formalmente errato
+            grp.removeClass("has-success has-error").addClass("has-error");
+            cfBool = false;
+		}
+		else {
+			// CF formalmente corretto
+            grp.removeClass("has-success has-error").addClass("has-success");
+            cfBool = true;
+        }
 
-                } else {
-                    if(grp.hasClass('has-error')) {
-                        grp.removeClass('has-error');
-                        grp.addClass('has-success');
-                        //btn.prop("disabled", false);
-                        cfBool = true;
-                    }
-                    else {
-                        grp.addClass('has-success');
-                        //btn.prop("disabled", false);
-                        cfBool = true;
-                    }
-
-                    if(cfBool == true && privacyBool == true) {
-                        btn.prop("disabled", false);
-                    }
-                }
-
-            });
+        if (cfBool == true && privacyBool == true) {
+            btn.prop("disabled", false);
         }
     }
+
     var handleCf = function() {
         $('#cod_fisc').unbind('keyup').keyup(function(){
            var cod = $(this).val();
