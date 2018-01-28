@@ -11,7 +11,7 @@
                 </div>
                 <div class="portlet-body">
                     <div class="note note-info">
-                        <h4>Benvenuto su RDL M5S!</h4>
+                        <h4>Benvenuto su RDL M5S LAZIO!</h4>
                         <p>Questa è la Piattaforma Operativa per i Rappresentanti di lista del Movimento 5 Stelle per le prossime elezioni.<br>
                             Iscrivendoti darai la tua disponibilità a rappresentare il MoVimento al seggio, segui le istruzioni e sarai ricontattato dal referente della tua zona.<br>
                             <br>

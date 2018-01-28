@@ -118,7 +118,8 @@ class RegisterController extends Controller
             'ind_res' => $data['ind_res'],
             'cap' => $data['cap'],
             'livello' => $data['livello'],
-            'verifyToken' => base64_encode($data['email'])
+            'verifyToken' => base64_encode($data['email']),
+            'idRole' => 4
         ];
 
 
@@ -135,10 +136,10 @@ class RegisterController extends Controller
         }
 
         $user = User::create($create);
-        DB::table('users_roles')->insert([
+        /*DB::table('users_roles')->insert([
             'idRole' => 4,
             'idUser' => $user->id
-        ]);
+        ]);*/
 
         $dataUser = User::findOrFail($user->id);
         $this->sendMail($dataUser);
