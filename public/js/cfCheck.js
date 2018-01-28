@@ -4,7 +4,7 @@
 
 var cfCheckManager = function() {
 
-	var regExp = "/^(?:[B-DF-HJ-NP-TV-Z](?:[AEIOU]{2}|[AEIOU]X)|[AEIOU]{2}X|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[\dLMNP-V][1-9MNP-V]|[1-9MNP-V][0L]))[A-Z]$/i";
+	var regExp = /^(?:[B-DF-HJ-NP-TV-Z](?:[AEIOU]{2}|[AEIOU]X)|[AEIOU]{2}X|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[1256LMRS][\dLMNP-V])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[\dLMNP-V][1-9MNP-V]|[1-9MNP-V][0L]))[A-Z]$/i;
 
     // var urlCf = 'http://webservices.dotnethell.it/codicefiscale.asmx/ControllaCodiceFiscale';
     var cfBool = false;
@@ -21,8 +21,9 @@ var cfCheckManager = function() {
 
     var checkCF = function (cod) {
 		/* 2018.01.27 - Valerio */
-
-		if (cod.length != 16 || preg_match(regExp, cod)) {
+        var grp = $('#codF');
+        var btn = $('#regist');
+		if (cod.length != 16 || !cod.match(regExp)) {//preg_match(regExp, cod)) {
 			// CF formalmente errato
             grp.removeClass("has-success has-error").addClass("has-error");
             cfBool = false;
