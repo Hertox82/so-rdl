@@ -23,20 +23,20 @@ class Controller extends HController
             'icon' => 'icon-home',
         ]);
         if($id != null) {
-            $RelUser = DB::table('users_roles')->where(['idUser' => $id])->first();
-            if($RelUser->idRole === 1 or $RelUser->idRole === 2) {
+            if($id === 1 or $id === 2) {
                 $menu = $menu->add([
                     'label' => 'Utenti',
                     'routeName' => 'users.index',
                     'icon' => 'fa fa-users',
                 ]);
+                if($id === 1) {
+                    $menu = $menu->add([
+                        'label' => 'Ruoli',
+                        'routeName' => 'roles.index',
+                        'icon' => 'fa fa-graduation-cap',
+                    ]);
+                }
             }
-        }else {
-            $menu = $menu->add([
-                'label' => 'Utenti',
-                'routeName' => 'users.index',
-                'icon' => 'fa fa-users',
-            ]);
         }
 
         $menu = $menu->get();

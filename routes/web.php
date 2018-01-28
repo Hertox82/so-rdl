@@ -45,10 +45,42 @@ Route::group(['middleware' => ['auth']],function(){
 
     /*
     |----------------------------------------------------------------
-    | Utent
+    | Utenti
     |----------------------------------------------------------------
     */
 
+    Route::get('/profilo',[
+        'as'    => 'profilo.index',
+        'uses'  => 'Users\UsersController@index'
+    ]);
+
+    Route::get('/profilo/create',function(){
+        return redirect(route('dashboard'));
+    })->name('profilo.create');
+
+    Route::get('/profilo/{id}',[
+        'as'    => 'profilo.edit',
+        'uses'  => 'Users\UsersController@profilo'
+    ]);
+
+    Route::post('/profilo',[
+        'as'    => 'profilo.store',
+        'uses'  => 'Users\UsersController@profiloStore'
+    ]);
+
+    Route::put('/profilo/{id}',[
+        'as'    => 'profilo.update',
+        'uses'  => 'Users\UsersController@profiloEdit'
+    ]);
+
     Route::resource('users','Users\UsersController');
+
+    /*
+    |----------------------------------------------------------------
+    | Ruoli
+    |----------------------------------------------------------------
+    */
+
+    Route::resource('roles','Roles\RolesController');
 });
 

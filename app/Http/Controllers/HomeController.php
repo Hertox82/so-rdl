@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $id = $request->user()->id;
+        $id = $request->user()->idRole;
         $this->startApp($id);
 
         return view('home');

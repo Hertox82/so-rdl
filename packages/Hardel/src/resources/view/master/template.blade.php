@@ -120,6 +120,7 @@
                             <!--
                             <li class="divider"> </li> -->
                             <li>
+                                <a href="{{route('profilo.edit',['id' => Auth::user()->id])}}"> Mio Profilo</a>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
